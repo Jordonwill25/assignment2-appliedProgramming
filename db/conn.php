@@ -1,5 +1,5 @@
 
-<?php /*
+<?php 
     $host= '127.0.0.1';
     $port='3307';
     $db='registrationform';
@@ -25,8 +25,11 @@
     };
 
     require_once "crud.php";
+    require_once "user.php";
     $crud = new crud($pdo);
-    */
+    $user = new user($pdo);
+
+    $user->insertUser("admin", "Password");
 ?>
 
 
@@ -34,7 +37,7 @@
 
 
 <!--alternate version using workbench-->
-<?php  
+<?php  /*
     $host= 'applied-web.mysql.database.azure.com';
     $db='registration_jordonwdb';
     $user='appliedweb_user@applied-web';
@@ -58,5 +61,10 @@
     };
 
     require_once "crud.php";
+    require_once "user.php";
     $crud = new crud($pdo);
-?>
+    $user = new user($pdo);
+
+    $user->insertUser("admin", "Password");
+
+?>*/

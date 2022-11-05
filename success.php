@@ -2,6 +2,8 @@
     $title ="Success";
     require_once "includes/header.php";  
     require_once "db/conn.php";
+    require_once "sendEmail.php";
+
 
     if(isset($_POST['submitform'])){
 //extracting value from post array
@@ -15,11 +17,13 @@
     
       //track if successful or  not and to insert
       $isSuccess= $crud->insert($fName,$lName,$email,$hAddress,$pNumber,$dob,$speciality);
+
+     // $specialtyName= $crud->getSpecialty($speciality);
     
 
 
     if($isSuccess){
-
+     sendEmail::sendMail($email, "Welcom To Your New School","You have been Registered");
      echo " <h1 class='text-center text-success'>You have been registered</h1>";
 
     }else{

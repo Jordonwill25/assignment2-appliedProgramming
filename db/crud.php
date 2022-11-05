@@ -89,7 +89,7 @@
                 $sql= "select * from registrant a inner join specialties s on  a.specialty_Id = s.specialty_Id
                 where registarnt_Id = :id";
                 $stmt=  $this->db->prepare($sql);
-                $stmt->bindparam('id',$id);
+                $stmt->bindparam(':id',$id);
                 $stmt->execute();
                 $result = $stmt->fetch();
                 return $result;
@@ -110,6 +110,25 @@
             try{
                 $sql = "SELECT * FROM `specialties`;";
                 $results= $this->db->query($sql);
+                return $results;
+
+            }catch(PDOException $e){
+                echo $e ->getMessage();
+                return false;
+                //throw $th;
+             }
+
+        }
+
+        public function getSpecialty($id){
+
+            try{
+                $sql = "SELECT * FROM `specialties` where specialty_Id=:id;";
+                $stmt= $this->db->query($sql);
+                $stmt->bindparam(':id',$id);
+                $stmt->execute();
+                $results = $stmt->fetch();
+
                 return $results;
 
             }catch(PDOException $e){
