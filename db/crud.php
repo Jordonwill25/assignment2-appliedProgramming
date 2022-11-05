@@ -109,8 +109,8 @@
 
             try{
                 $sql = "SELECT * FROM `specialties`;";
-                $resuts= $this->db->query($sql);
-                return $resuts;
+                $results= $this->db->query($sql);
+                return $results;
 
             }catch(PDOException $e){
                 echo $e ->getMessage();

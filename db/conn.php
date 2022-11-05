@@ -1,5 +1,5 @@
 
-<?php  
+<?php /*
     $host= '127.0.0.1';
     $port='3307';
     $db='registrationform';
@@ -26,6 +26,7 @@
 
     require_once "crud.php";
     $crud = new crud($pdo);
+    */
 ?>
 
 
@@ -33,7 +34,7 @@
 
 
 <!--alternate version using workbench-->
-<?php  /*
+<?php  
     $host= 'applied-web.mysql.database.azure.com';
     $db='registration_jordonwdb';
     $user='appliedweb_user@applied-web';
@@ -46,6 +47,7 @@
     try{
 
         $pdo= new PDO($dsn,$user,$pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo'hello database';
 
     }catch(PDOException $e){
@@ -53,5 +55,8 @@
         echo "<h1 class ='text-danger'>No data found</h1>";
        // throw new PDOException($e ->getMessage());
 
-    };*/
+    };
+
+    require_once "crud.php";
+    $crud = new crud($pdo);
 ?>
