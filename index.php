@@ -19,7 +19,7 @@
     date of birth
     area of study
 -->
-    <form method="post" action="Success.php" autocomplete="on">
+    <form method="post" action="success.php" autocomplete="on" enctype="multipart/form-data">
 <!--first name input -->
     <div class="mb-3">
     <label for="firstnameform" class="form-label">First Name</label>
@@ -68,8 +68,17 @@
       <?php }?>
     </select>
   </div>
+
+  <div class="mb-3 custom-file form-control" style="background-color: cyan;">
+    <input type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
+    <label class="custom-file-label" for="avatar">Choose File</label>
+    <div id="avatar" class="form-text text-dark">Adding a profile picture is optional</div>
+  </div>
+  </div>
   <!-- submit btn-->
-  <button type="submit" name="submitform" class="btn btn-primary">Submit</button>
+   <div class=" d-grid gap-2 form-control" >
+      <button type="submit" name="submitform" class="btn btn-primary ">Submit</button>
+    </div>
 </form>
     
 <br>

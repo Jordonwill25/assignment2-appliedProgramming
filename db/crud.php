@@ -8,10 +8,10 @@
         }
     
         //creating an instance to insert data into the database
-        public function insert($fName, $lName, $email,$hAddress, $pNumber,$dob,$speciality){
+        public function insert($fName, $lName, $email,$hAddress, $pNumber,$dob,$speciality,$destination){
             try {
-                $sql=" INSERT INTO registrant (firstName,lastName,emailAddress,homeAddress,contactNumber,dateOFBirth,specialty_Id) 
-                VALUES (:fName, :lName, :email,:hAddress, :pNumber,:dob,:speciality)";
+                $sql=" INSERT INTO registrant (firstName,lastName,emailAddress,homeAddress,contactNumber,dateOFBirth,specialty_Id,avatarPath) 
+                VALUES (:fName, :lName, :email,:hAddress, :pNumber,:dob,:speciality,:destination)";
 
                 $stmt=  $this->db->prepare($sql);
 
@@ -22,6 +22,7 @@
                 $stmt->bindparam(':pNumber',$pNumber);
                 $stmt->bindparam(':dob',$dob);
                 $stmt->bindparam(':speciality',$speciality);
+                $stmt->bindparam(':destination',$destination);
 
                 $stmt ->execute(); 
                 return true;

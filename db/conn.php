@@ -1,5 +1,5 @@
 
-<?php 
+<?php /*
     $host= '127.0.0.1';
     $port='3307';
     $db='registrationform';
@@ -29,7 +29,7 @@
     $crud = new crud($pdo);
     $user = new user($pdo);
 
-    $user->insertUser("admin", "Password");
+    $user->insertUser("admin", "Password");*/
 ?>
 
 
@@ -37,7 +37,7 @@
 
 
 <!--alternate version using workbench-->
-<?php  /*
+<?php  
     $host= 'applied-web.mysql.database.azure.com';
     $db='registration_jordonwdb';
     $user='appliedweb_user@applied-web';
@@ -51,7 +51,7 @@
 
         $pdo= new PDO($dsn,$user,$pass);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo'hello database';
+       // echo'hello database';
 
     }catch(PDOException $e){
             
@@ -67,4 +67,4 @@
 
     $user->insertUser("admin", "Password");
 
-?>*/
+?>

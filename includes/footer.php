@@ -1,6 +1,7 @@
 
-    <div id="footer" >
-    <?php echo "CopyRight" .date(" y ");?>
+    <div id="footer" class="p-3 mb-2 bg-primary text-white fix-bottom" >
+      <p class="text-center ">Copyright<?php echo date(" y ");?> - School Registration</p>
+    
     </div>
 
 </div>

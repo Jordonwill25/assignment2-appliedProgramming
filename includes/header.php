@@ -14,38 +14,39 @@
   </head>
 
   <body >
+  <nav class="navbar navbar-expand navbar-dark bg-primary">
+   
+   <div class="container-fluid">
+   <a class="navbar-brand" href="index.php">School Registration</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav mr-auto">
+    <a class="nav-link active" aria-current="page" href="index.php ">Home</a>
+    <a class="nav-link" href="viewRecords.php">View Records</a>
+    
+  </div>
+  <div class="navbar-nav ms-auto">
+
+    <?php if(!isset($_SESSION['user_id'])){ ?>
+       <a class="nav-link active" aria-current="page" href="login.php ">Login</span></a>
+
+   <?php }else{ ?>
+    
+    <a class="nav-link active" aria-current="page" href="#"><span>Hello <?php echo $_SESSION['userName'] ?> !</span></span></a>
+    <a class="nav-link active" aria-current="page" href="logOut.php ">Logout </a>
+
+  <?php } ?>
+
+  </div>
+</div>
+</div>
+</nav>
 
     <div Class ="container">
 
-    <nav class="navbar navbar-expand" style="background-color: #e3f2fd;">
-   
-       <div class="container-fluid">
-       <a class="navbar-brand" href="index.php">School Registration</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav mr-auto">
-        <a class="nav-link active" aria-current="page" href="index.php ">Home</a>
-        <a class="nav-link" href="viewRecords.php">View Records</a>
-        
-      </div>
-      <div class="navbar-nav ms-auto">
-
-        <?php if(!isset($_SESSION['user_id'])){ ?>
-           <a class="nav-link active" aria-current="page" href="login.php ">Login</span></a>
-
-       <?php }else{ ?>
-        
-        <a class="nav-link active" aria-current="page" href="#"><span>Hello <?php echo $_SESSION['userName'] ?> !</span></span></a>
-        <a class="nav-link active" aria-current="page" href="logOut.php ">Logout </a>
-
-      <?php } ?>
-
-      </div>
-    </div>
-   </div>
-</nav>
+    
 <br>
         
 

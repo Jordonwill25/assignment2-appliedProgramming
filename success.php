@@ -14,9 +14,17 @@
       $pNumber= $_POST['phonenumberform'];
       $dob= $_POST['dobform'];
       $speciality= $_POST['studyform'];
+
+      $orgin_file= $_FILES["avatar"]["tmp_name"];
+      $ext= pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+      $targetDir= 'uploads/';
+      $destination= "$targetDir$pNumber.$ext";
+      move_uploaded_file($orgin_file,$destination);
+
+      
     
       //track if successful or  not and to insert
-      $isSuccess= $crud->insert($fName,$lName,$email,$hAddress,$pNumber,$dob,$speciality);
+      $isSuccess= $crud->insert($fName,$lName,$email,$hAddress,$pNumber,$dob,$speciality,$destination);
 
      // $specialtyName= $crud->getSpecialty($speciality);
     
@@ -50,7 +58,7 @@
   </ul>
 </div>
 -->
-
+<img src="<?php echo"$destination"; ?>" style="width:30%; height:30%" />
 <div class="card" style="width: 18rem;">
   <div class="card-header">
     Registration information
